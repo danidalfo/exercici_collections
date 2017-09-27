@@ -6,7 +6,6 @@ public class Main {
 	// write your code here
         System.out.println("HOLA");
 
-        Usuario u = new Usuario();
 
     }
 }
