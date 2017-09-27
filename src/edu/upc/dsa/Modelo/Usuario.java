@@ -1,4 +1,4 @@
-package edu.upc.dsa;
+package edu.upc.dsa.Modelo;
 
 public class Usuario {
     public String nombre;

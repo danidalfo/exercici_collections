@@ -1,4 +1,4 @@
-package edu.upc.dsa;
+package edu.upc.dsa.Modelo;
 
 public class Objeto {
 
@@ -8,4 +8,3 @@ public class Objeto {
     public int valor;
     public int coste;
     }
-}
