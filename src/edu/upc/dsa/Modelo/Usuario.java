@@ -31,27 +31,27 @@ public class Usuario {
         return nombre;
     }
 
-    String getPassword()
+    public String getPassword()
     {
         return password;
     }
 
-    int getNivel()
+    public int getNivel()
     {
         return nivel;
     }
 
-    int getAtaque()
+    public int getAtaque()
     {
         return ataque;
     }
 
-    int getDefensa()
+    public int getDefensa()
     {
         return defensa;
     }
 
-    int getResistencia()
+    public int getResistencia()
     {
         return  resistencia;
     }

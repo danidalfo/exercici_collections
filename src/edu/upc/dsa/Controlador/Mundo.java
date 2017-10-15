@@ -9,7 +9,7 @@ import java.util.Vector;
 public class Mundo {
     HashMap<String, Usuario> listaUsuarios;
 
-    Mundo() {
+  public   Mundo() {
         listaUsuarios = new HashMap<String, Usuario>();
     }
 
