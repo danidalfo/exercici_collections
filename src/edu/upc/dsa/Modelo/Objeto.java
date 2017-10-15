@@ -1,13 +1,11 @@
 package edu.upc.dsa.Modelo;
 
 public class Objeto {
-
-    public String nombre;
-    public String tipo;
-    public String descripcion;
-    public int valor;
-    public int coste;
-    }
+   public static String nombre;
+    String tipo;
+    String descripcion;
+    int valor;
+    int coste;
 
     public Objeto(String nombre,String tipo,String descripcion,int valor,int coste)
     {
@@ -43,4 +41,3 @@ public class Objeto {
         return coste;
     }
 }
-

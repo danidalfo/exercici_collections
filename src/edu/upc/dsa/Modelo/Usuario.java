@@ -1,19 +1,19 @@
 package edu.upc.dsa.Modelo;
 
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.SortedSet;
+import edu.upc.dsa.Modelo.Objeto;
+
+import java.util.*;
 
 public class Usuario {
-    String nombre;
-    String password;
+    public static String nombre;
+    public static String password;
     int nivel;
     int ataque;
     int defensa;
     int resistencia;
-    SortedSet<Objeto> ObjetosUsuario;
-}
+    Vector<Objeto> ObjetosUsuario;
+
+
 
     public Usuario(String nombre,String password,int nivel,int ataque,int defensa,int resistencia)
     {
@@ -23,105 +23,10 @@ public class Usuario {
         this.nombre = nombre;
         this.password = password;
         this.resistencia = resistencia;
-        ObjetosUsuario = new SortedSet<Objeto>() {
-            @Override
-            public Comparator<? super Objeto> comparator() {
-                return null;
-            }
-
-            @Override
-            public SortedSet<Objeto> subSet(Objeto objeto, Objeto e1) {
-                return null;
-            }
-
-            @Override
-            public SortedSet<Objeto> headSet(Objeto objeto) {
-                return null;
-            }
-
-            @Override
-            public SortedSet<Objeto> tailSet(Objeto objeto) {
-                return null;
-            }
-
-            @Override
-            public Objeto first() {
-                return null;
-            }
-
-            @Override
-            public Objeto last() {
-                return null;
-            }
-
-            @Override
-            public int size() {
-                return 0;
-            }
-
-            @Override
-            public boolean isEmpty() {
-                return false;
-            }
-
-            @Override
-            public boolean contains(Object o) {
-                return false;
-            }
-
-            @Override
-            public Iterator<Objeto> iterator() {
-                return null;
-            }
-
-            @Override
-            public Object[] toArray() {
-                return new Object[0];
-            }
-
-            @Override
-            public <T> T[] toArray(T[] ts) {
-                return null;
-            }
-
-            @Override
-            public boolean add(Objeto objeto) {
-                return false;
-            }
-
-            @Override
-            public boolean remove(Object o) {
-                return false;
-            }
-
-            @Override
-            public boolean containsAll(Collection<?> collection) {
-                return false;
-            }
-
-            @Override
-            public boolean addAll(Collection<? extends Objeto> collection) {
-                return false;
-            }
-
-            @Override
-            public boolean retainAll(Collection<?> collection) {
-                return false;
-            }
-
-            @Override
-            public boolean removeAll(Collection<?> collection) {
-                return false;
-            }
-
-            @Override
-            public void clear() {
-
-            }
-        };
+        ObjetosUsuario = new Vector<Objeto>() {};
     }
 
-    String getNombre()
+    public static String getNombre()
     {
         return nombre;
     }
@@ -151,12 +56,45 @@ public class Usuario {
         return  resistencia;
     }
 
-    void añadirObjeto(Objeto ob)
+   public void añadirObjeto(Objeto ob)
     {
         ObjetosUsuario.add(ob);
     }
 
-    SortedSet<Objeto> getObjetosUsuario()
+    public Vector<Objeto> getObjetosUsuario()
     {
         return ObjetosUsuario;
     }
+
+    public int buscaObjetoIndex(String nombre)
+    {
+        int rel = -1;
+        for(int i =0;i<ObjetosUsuario.size();i++)
+        {
+            if(ObjetosUsuario.get(i).nombre==nombre)
+            {
+                return i;
+            }
+
+        }
+        return rel;
+    }
+
+    public Objeto buscaObjeto(String nombre)
+    {
+        int i = buscaObjetoIndex(nombre);
+        if(i!=-1)
+            return ObjetosUsuario.get(i);
+        return null;
+    }
+
+    public Boolean eliminarObjeto(String Nombre)
+    {
+        int i = buscaObjetoIndex(nombre);
+        if(i!=-1) {
+            ObjetosUsuario.remove(i);
+            return true;
+        }
+        return false;
+    }
+}
